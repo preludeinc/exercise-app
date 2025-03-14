@@ -18,7 +18,7 @@ const parseArguments = (args: string[]): BMIValues => {
 }
 
 const calculateBMI = (h: number, w: number): string => {
-  let mSquare = (h * 0.01) * (h * 0.01)
+  let mSquare = (h * 0.01) ** 2
   let bmi = w / mSquare
   let result = ""
   
@@ -35,7 +35,7 @@ const calculateBMI = (h: number, w: number): string => {
 }
 
 try {
-  const { height, weight} = parseArguments(process.argv)
+  const { height, weight } = parseArguments(process.argv)
   console.log(calculateBMI(height, weight))
 } catch (error: unknown) {
   
